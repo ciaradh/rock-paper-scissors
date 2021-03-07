@@ -1,9 +1,3 @@
-// enum GameOptionsEnum {
-//     1 = "rock",
-//     2 = "paper",
-//     3 = "scissors"
-// }
-
 let computerScore = 0;
 let playerScore = 0;
 let playerSelection;
