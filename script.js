@@ -56,44 +56,18 @@ function random() {
 
 function gameRound(playerSelection, computerSelection) {
     let playerSel = playerSelection.toLowerCase();
-    if(playerSel == "rock") {
-        if(computerSelection == "paper") {
-            computerScore++;
-            return "You Lose! paper beats rock!"
-            
-        }
-        else if(computerSelection == "scissors") {
-            playerScore++;
-            return "You win!"
-        }
-        else {
-            return "It's a tie!"
-        }
+
+    if(playerSel === computerSelection) {
+        return "It's a tie!"
     }
-    if(playerSel == "paper") {
-        if(computerSelection == "scissors") {
-            computerScore++;
-            return "You Lose! scissors beats paper!"
-        }
-        else if(computerSelection == "rock") {
-            playerScore++;
-            return "You win!"
-        }
-        else {
-            return "It's a tie!"
-        }
-    }
-    if(playerSel == "scissors") {
-        if(computerSelection == "rock") {
-            computerScore++;
-            return "You Lose! rock beats scissors!"
-        }
-        else if(computerSelection == "paper") {
-            playerScore++;
-            return "You win!"
-        }
-        else {
-            return "It's a tie!"
-        }
+    else if (
+        (playerSel == "rock" && computerSelection == "scissors")||
+        (playerSel == "paper" && computerSelection == "rock") ||
+        (playerSel == "scissors" && computerSelection == "paper")) {
+        playerScore++;
+        return "You win!";
+    } else {
+        computerScore++;
+        return "You lose";
     }
 }
