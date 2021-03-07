@@ -7,6 +7,22 @@
   <script src="script.js"></script>
 </head>
 <body>
-    <h1>Hello world</h1>
+    <h1>Welcome to rock, paper, scissors</h1>
+    <div id="playersChoices">
+        <button value="rock" onclick="getPlayerSelection(this)">R</button>
+        <button value="paper" onclick="getPlayerSelection(this)">P</button>
+        <button value="scissor" onclick="getPlayerSelection(this)">S</button>
+    </div>
+    <br>
+    <div>Computer choice: <span id="computerChoice"></span></div>
+    <div>Player choice: <span id="playerChoice"></span></div>
+    <div>Round: <span id="roundWinner"></span></div>
+    <br>
+    <div>Computer score: <span id="computerScore">0</span></div>
+    <div>Player score: <span id="playerScore">0</span></div>
+    <br>
+    <div>The winner is: <span id="winner"></span></div>
+    <br>
+    <button onclick="resetGame()">Reset</button>
 </body>
 </html>

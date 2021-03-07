@@ -6,32 +6,7 @@
 
 let computerScore = 0;
 let playerScore = 0;
-game();
-
-function game() {
-
-    //loop until either player reaches 5 points
-    for(let i = 1; i <6; i++) {
-        let computerSelection = computerPlay();
-        let playerSelection = window.prompt('Please insert your choice');
-        console.group(i);
-        console.log("computer - " + computerSelection);
-        console.log("player - " + playerSelection);
-        console.log(i + " - " + gameRound(playerSelection, computerSelection));
-        console.groupEnd();
-    }
-
-    console.log(`Computer score: ${computerScore}`);
-    console.log(`Player score: ${playerScore}`);
-
-    if(computerScore > playerScore) {
-        console.log("%c Computer wins", 'color: red');
-    } else if(playerScore > computerScore) {
-        console.log("%c You win", 'color: green')
-    } else {
-        console.log("%c It's a tie", 'color: orange')
-    }
-}
+let playerSelection;
 
 //function to return randomly the computer choice
 function computerPlay() {
@@ -56,7 +31,8 @@ function random() {
 
 function gameRound(playerSelection, computerSelection) {
     let playerSel = playerSelection.toLowerCase();
-
+    document.getElementById("computerChoice").innerText = computerSelection;
+    document.getElementById("playerChoice").innerText = playerSelection;
     if(playerSel === computerSelection) {
         return "It's a tie!"
     }
@@ -65,9 +41,40 @@ function gameRound(playerSelection, computerSelection) {
         (playerSel == "paper" && computerSelection == "rock") ||
         (playerSel == "scissors" && computerSelection == "paper")) {
         playerScore++;
+        document.getElementById("playerScore").innerText = playerScore;
+        displayResults();
         return "You win!";
     } else {
         computerScore++;
+        document.getElementById("computerScore").innerText = computerScore;
+        displayResults();
         return "You lose";
     }
+}
+
+function displayResults() {
+    if(playerScore === 5) {
+        document.getElementById("winner").innerText = "Player";
+        disablePlayerChoices();
+    } else if (computerScore === 5) {
+        document.getElementById("winner").innerText = "Computer";
+        disablePlayerChoices();
+    }
+}
+
+function disablePlayerChoices() {
+    let buttons = document.querySelectorAll("#playersChoices button");
+    for(let i =0; i<buttons.length; i++) {
+        buttons[i].disabled = true;
+    }
+}
+
+function getPlayerSelection(button) {
+    playerSelection = button.value;
+    let round = gameRound(playerSelection, computerPlay());
+    document.getElementById("roundWinner").innerText = round;
+}
+
+function resetGame() {
+    window.location.reload();
 }
