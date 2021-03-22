@@ -1,0 +1,146 @@
+/* CSS HEX */
+:root {
+    --paolo-veronese-green: #419d78ff;
+    --indigo-dye: #033860ff;
+    --marigold: #efa00bff;
+    --fire-opal: #ee6352ff;
+    --maximum-blue-purple: #b4a0e5ff;
+    --white: #fff;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--indigo-dye);
+}
+
+.Game {
+    width: 40vw;
+    margin: 50px auto;
+}
+
+.Game__title {
+    display: flex;
+    flex-direction: column;
+}
+
+.Game__title span {
+    text-transform: uppercase;
+    color: var(--white);
+    font-size: 20px;
+}
+
+.Game__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+}
+
+.Game__score {
+    display: flex;
+    border: 1px solid var(--white);
+    border-radius: 5px;
+    opacity: 0.3;
+}
+
+.Game__score span {
+    padding: 16px;
+    font-size: 16px;
+    color: var(--white);
+}
+
+.Game__score span:last-child {
+    border-left: 1px solid var(--white);
+}
+
+.Game__playerChoicesWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+button.Game__choice {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--white);;
+    cursor: pointer;
+    border: 8px solid;
+    font-size: 26px;
+}
+
+button.Game__choice:hover {
+    transform: scale(1.1);
+}
+
+button.Game__choice:focus {
+    outline: none;
+}
+
+button.Game__choice--rock {
+    border-color: var(--maximum-blue-purple);
+}
+
+button.Game__choice--paper {
+    border-color: var(--paolo-veronese-green);
+}
+
+button.Game__choice--scissors {
+    border-color: var(--fire-opal);
+}
+
+.Game__tag {
+    padding: 4px 8px;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.Game__roundWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Game__roundChoice,
+.Game__roundWinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Game__roundWinnerText {
+    text-transform: uppercase;
+    font-size: 24px;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.Game__roundWinnerButton,
+.Game__winnerButton {
+    text-transform: uppercase;
+    background-color: var(--white);
+    padding: 8px 16px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Game__winnerText {
+    color: var(--marigold);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+.Game__winnerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.is-hidden {
+    display: none;
+}
+
