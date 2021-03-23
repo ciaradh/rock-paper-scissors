@@ -25,9 +25,10 @@ function random() {
 
 function gameRound(playerSelection, computerSelection) {
     let playerSel = playerSelection.toLowerCase();
-    document.getElementById("computerChoice").innerText = computerSelection;
-    document.getElementById("playerChoice").innerText = playerSelection;
-    // document.getElementById(`p-${playerSelection}`).classList.remove("is-hidden");
+    // document.getElementById("computerChoice").innerText = computerSelection;
+    // document.getElementById("playerChoice").innerText = playerSelection;
+    document.getElementById(`p-${playerSelection}`).classList.remove("is-hidden");
+    document.getElementById(`c-${computerSelection}`).classList.remove("is-hidden");
     if(playerSel === computerSelection) {
         return "It's a tie"
     }
@@ -86,7 +87,12 @@ function resetGame() {
 }
 
 function newRound() {
-    //TODO show choice wrapper, hide result wrapper
     document.getElementById("playersChoices").classList.remove("is-hidden");
     document.getElementById("roundWrapper").classList.add("is-hidden");
+    document.getElementById(`p-rock`).classList.add("is-hidden");
+    document.getElementById(`p-paper`).classList.add("is-hidden");
+    document.getElementById(`p-scissors`).classList.add("is-hidden");
+    document.getElementById(`c-rock`).classList.add("is-hidden");
+    document.getElementById(`c-paper`).classList.add("is-hidden");
+    document.getElementById(`c-scissors`).classList.add("is-hidden");
 }

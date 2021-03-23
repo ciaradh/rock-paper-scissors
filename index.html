@@ -23,7 +23,7 @@
       <div class="Game__playerChoicesWrapper" id="playersChoices">
           <button class="Game__choice Game__choice--rock" value="rock" onclick="getPlayerSelection(this)">🪨</button>
           <button class="Game__choice Game__choice--paper" value="paper" onclick="getPlayerSelection(this)">📄</button>
-          <button class="Game__choice Game__choice--scissors" value="scissor" onclick="getPlayerSelection(this)">✂️</button>
+          <button class="Game__choice Game__choice--scissors" value="scissors" onclick="getPlayerSelection(this)">✂️</button>
       </div>
       <div class="Game__roundWrapper is-hidden" id="roundWrapper">
         <div class="Game__roundChoice">
@@ -32,7 +32,7 @@
 
             <div id="p-rock" class="Game__choice Game__choice--rock is-hidden">🪨</div>
             <div id="p-paper" class="Game__choice Game__choice--paper is-hidden">📄</div>
-            <div id="p-scissor" class="Game__choice Game__choice--scissors is-hidden">✂️</div>
+            <div id="p-scissors" class="Game__choice Game__choice--scissors is-hidden">✂️</div>
       
           </div>
         </div>
@@ -42,7 +42,11 @@
         </div>
         <div class="Game__roundChoice">
           <div class="Game__tag">Computer picked</div>
-          <span id="computerChoice"></span>
+          <span id="computerChoice">
+            <div id="c-rock" class="Game__choice Game__choice--rock is-hidden">🪨</div>
+            <div id="c-paper" class="Game__choice Game__choice--paper is-hidden">📄</div>
+            <div id="c-scissors" class="Game__choice Game__choice--scissors is-hidden">✂️</div>
+          </span>
         </div>
       </div>
       <!-- <div>Computer choice: <span id="computerChoice"></span></div>

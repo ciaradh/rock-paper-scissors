@@ -60,33 +60,44 @@ body {
     padding: 16px;
 }
 
-button.Game__choice {
+button.Game__choice,
+.Game__choice {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background-color: var(--white);;
-    cursor: pointer;
+    background-color: var(--white);
     border: 8px solid;
     font-size: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 button.Game__choice:hover {
     transform: scale(1.1);
 }
 
+button.Game__choice {
+    cursor: pointer;
+}
+
 button.Game__choice:focus {
     outline: none;
 }
 
-button.Game__choice--rock {
+button.Game__choice--rock,
+.Game__choice--rock {
     border-color: var(--maximum-blue-purple);
 }
 
-button.Game__choice--paper {
+button.Game__choice--paper,
+.Game__choice--paper {
     border-color: var(--paolo-veronese-green);
 }
 
-button.Game__choice--scissors {
+button.Game__choice--scissors,
+.Game__choice--scissors {
     border-color: var(--fire-opal);
 }
 
@@ -94,6 +105,7 @@ button.Game__choice--scissors {
     padding: 4px 8px;
     text-transform: uppercase;
     color: var(--white);
+    margin-bottom: 8px;
 }
 
 .Game__roundWrapper {
@@ -132,6 +144,7 @@ button.Game__choice--scissors {
     margin-bottom: 24px;
     text-transform: uppercase;
     font-size: 40px;
+    font-weight: bold;
 }
 
 .Game__winnerWrapper {
