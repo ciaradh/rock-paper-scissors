@@ -25,8 +25,6 @@ function random() {
 
 function gameRound(playerSelection, computerSelection) {
     let playerSel = playerSelection.toLowerCase();
-    // document.getElementById("computerChoice").innerText = computerSelection;
-    // document.getElementById("playerChoice").innerText = playerSelection;
     document.getElementById(`p-${playerSelection}`).classList.remove("is-hidden");
     document.getElementById(`c-${computerSelection}`).classList.remove("is-hidden");
     if(playerSel === computerSelection) {
